@@ -1,0 +1,166 @@
+﻿@using WebAnVat.Models
+@model Mon
+@{
+    ViewBag.Title = "detailProducts";
+    Layout = "~/Views/shared/_primaryLayout.cshtml";
+}
+
+<div class="body container">
+    <div class="body__location">
+        <a href="" class="body__link">Trang chủ </a>
+        <span>/</span>
+        <div class="body__text">Sản phẩm</div>
+    </div>
+
+    <div class="body__wrapDetail">
+        <div class="wrapDetail__boxLeft">
+            <div class="wrapDetail__boxImg">
+                <img src="~/asset/img/Products/@Model.HinhAnh" alt="">
+            </div>
+        </div>
+
+        <div class="wrapDetail__boxRight">
+            <div class="wrapDetail__wrapContent">
+                <div class="wrapDetail__name">@Model.TenMon</div>
+                <div class="wrapDetail__wrapID"><span>ID:</span>@Model.ID_Mon</div>
+                <div class="wrapDetail__wrapPriceQuantity">
+                    <div class="wrapDetail__price">@Model.GiaBan</div>
+                    <div class="counter" id="counter1">
+                        <div class="btnCount btnMinus">
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                        <div class="number">0</div>
+                        <div class="btnCount btnPlus">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapDetail__wrapSize">
+                    <div class="wrapDetail__title">Chọn kích cỡ:</div>
+                    <div class="wrapDetail__wrapBtnSize">
+                        <div class="wrapDetail__btnSize active">
+                            <div class="btnSize__text">S</div>
+                            <div class="btnSize__priceIncreases">+0đ</div>
+                        </div>
+                        <div class="wrapDetail__btnSize">
+                            <div class="btnSize__text">M</div>
+                            <div class="btnSize__priceIncreases">+5.000đ</div>
+                        </div>
+                        <div class="wrapDetail__btnSize">
+                            <div class="btnSize__text">L</div>
+                            <div class="btnSize__priceIncreases">+10.000đ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapDetail__wrapOption" id="sweet">
+                    <div class="wrapDetail__title">Ngọt:</div>
+                    <div class="wrapDetail__btns">
+                        <div class="wrapDetail__btn active">Ít</div>
+                        <div class="wrapDetail__btn">Bình thường</div>
+                        <div class="wrapDetail__btn">Nhiều</div>
+                    </div>
+                </div>
+
+                <div class="wrapDetail__wrapOption" id="tea">
+                    <div class="wrapDetail__title">Trà:</div>
+                    <div class="wrapDetail__btns">
+                        <div class="wrapDetail__btn active">Ít</div>
+                        <div class="wrapDetail__btn">Bình thường</div>
+                        <div class="wrapDetail__btn">Nhiều</div>
+                    </div>
+                </div>
+
+                <div class="wrapDetail__wrapOption" id="ice">
+                    <div class="wrapDetail__title">Đá:</div>
+                    <div class="wrapDetail__btns">
+                        <div class="wrapDetail__btn active">Ít</div>
+                        <div class="wrapDetail__btn">Bình thường</div>
+                        <div class="wrapDetail__btn">Nhiều</div>
+                    </div>
+                </div>
+
+                <div class="wrapDetail__wrapTopping">
+                    <div class="wrapDetail__title">Chọn Topping:</div>
+                    <div class="wrapDetail__wrapOptionTopping">
+                        <div class="wrapdetail__optionTopping">
+                            <div class="wrapDetail__namePriceTopp">
+                                <div class="wrapDetail__nameTopp">Trân châu đen</div>
+                                <div class="wrapDetail__priceTopp">7.000đ</div>
+                            </div>
+                            <div class="counter" id="counter2">
+                                <div class="btnCount btnMinus">
+                                    <i class="fa-solid fa-minus"></i>
+                                </div>
+                                <div class="number">0</div>
+                                <div class="btnCount btnPlus">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrapdetail__optionTopping">
+                            <div class="wrapDetail__namePriceTopp">
+                                <div class="wrapDetail__nameTopp">Thạch trái cây</div>
+                                <div class="wrapDetail__priceTopp">7.000đ</div>
+                            </div>
+                            <div class="counter" id="counter2">
+                                <div class="btnCount btnMinus">
+                                    <i class="fa-solid fa-minus"></i>
+                                </div>
+                                <div class="number">0</div>
+                                <div class="btnCount btnPlus">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrapdetail__optionTopping">
+                            <div class="wrapDetail__namePriceTopp">
+                                <div class="wrapDetail__nameTopp">Vãi (4 trái)</div>
+                                <div class="wrapDetail__priceTopp">7.000đ</div>
+                            </div>
+                            <div class="counter" id="counter2">
+                                <div class="btnCount btnMinus">
+                                    <i class="fa-solid fa-minus"></i>
+                                </div>
+                                <div class="number">0</div>
+                                <div class="btnCount btnPlus">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrapdetail__optionTopping">
+                            <div class="wrapDetail__namePriceTopp">
+                                <div class="wrapDetail__nameTopp">Đào miếng (3 miếng)</div>
+                                <div class="wrapDetail__priceTopp">7.000đ</div>
+                            </div>
+                            <div class="counter" id="counter2">
+                                <div class="btnCount btnMinus">
+                                    <i class="fa-solid fa-minus"></i>
+                                </div>
+                                <div class="number">0</div>
+                                <div class="btnCount btnPlus">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="wrapDetail__wrapBtnAddCart">
+                <div class="wrapBtnAddCart__icon">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+                <div class="wrapBtnAddCart__text">
+                    Thêm vào giỏ hàng:
+                </div>
+                <div class="wrapBtnAddCart__price">
+                    45.000đ
+                </div>
+            </button>
+        </div>
+    </div>
+</div>

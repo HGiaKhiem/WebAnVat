@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebAnVat.Models.Mon>
+
+@{
+    Layout = "~/Views/shared/_primaryLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenMon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaBan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinhAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KhuyenMai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaSauKhiGiam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiMonAn.TenLoaiMonAn)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenMon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinhAnh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhuyenMai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaSauKhiGiam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiMonAn.TenLoaiMonAn)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID_Mon }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID_Mon }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID_Mon })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
