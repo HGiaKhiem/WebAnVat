@@ -29,7 +29,7 @@ namespace WebAnVat.Controllers
                 using (SqlConnection conn = new SqlConnection(conStr))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM NguoiMua WHERE Email = @Email AND MatKhau = @MatKhau";
+                    string sql = "  ";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@Email", model.Email);
                     cmd.Parameters.AddWithValue("@MatKhau", model.MatKhau);
@@ -85,13 +85,13 @@ namespace WebAnVat.Controllers
                     ViewBag.Message = "Email đã tồn tại";
                     return View();
                 }
-
+                // Nếu đăng nhập là hợp lệ thì thêm người dùng mới vào
                 string insertSql = "INSERT INTO NguoiMua (Ten, Sdt, MatKhau, Email) VALUES (@Ten, @Sdt, @MatKhau, @Email)";
                 SqlCommand insertCmd = new SqlCommand(insertSql, conn);
                 insertCmd.Parameters.AddWithValue("@Ten", model.Ten);
                 insertCmd.Parameters.AddWithValue("@Sdt", model.Sdt);
                 insertCmd.Parameters.AddWithValue("@Email", model.Email);
-                insertCmd.Parameters.AddWithValue("@MatKhau", model.MatKhau); 
+                insertCmd.Parameters.AddWithValue("@MatKhau", model.MatKhau);
                 insertCmd.ExecuteNonQuery();
             }
 
