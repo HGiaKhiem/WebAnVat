@@ -29,7 +29,7 @@ namespace WebAnVat.Controllers
                 using (SqlConnection conn = new SqlConnection(conStr))
                 {
                     conn.Open();
-                    string sql = "  ";
+                    string sql = "SELECT * FROM NguoiMua WHERE Email = @Email AND MatKhau = @MatKhau ";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@Email", model.Email);
                     cmd.Parameters.AddWithValue("@MatKhau", model.MatKhau);
