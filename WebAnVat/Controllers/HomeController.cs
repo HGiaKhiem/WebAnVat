@@ -39,6 +39,7 @@ namespace WebAnVat.Controllers
                     ds.Add(m);
                 }
             }
+            // danh sách các món ăn
             var foods = ds.Where(t => t.ID_LoaiMonAn == 103).ToList();
             var drinks = ds.Where(t => t.ID_LoaiMonAn == 101 || t.ID_LoaiMonAn == 102 || t.ID_LoaiMonAn == 100).ToList();
 
@@ -46,7 +47,7 @@ namespace WebAnVat.Controllers
             ViewBag.listFood = foods;
             return View();
         }
-
+        // Tìm kiếm món ăn theo tên
         public ActionResult searchByName(string tenmon)
         {
             List<Mon> ds = new List<Mon>();
@@ -72,8 +73,8 @@ namespace WebAnVat.Controllers
             }    
             return View(ds);
         }
-
-
+        
+        //Chi tiết sản phẩm
         public ActionResult detailProducts(int id)
         {   
             //Trả về sản phẩm vừa click vào bằng id
@@ -145,7 +146,7 @@ namespace WebAnVat.Controllers
 
             return View(monDetail);
         }
-
+        //Thêm vào giỏ hàng
         [HttpPost]
         public ActionResult addToCart(string jsonProductData)
         {
